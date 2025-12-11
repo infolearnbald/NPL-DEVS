@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Criar Conta</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container center">
+  <h2>Criar Conta</h2>
+  <input id="regName" placeholder="Nome de exibição" />
+  <input id="regEmail" type="email" placeholder="Email" />
+  <input id="regPass" type="password" placeholder="Senha" />
+  <input id="regTeamCode" placeholder="Código da equipa (obrigatório)" />
+  <button id="signupBtn" class="btn blue">Criar Conta</button>
+  <p id="msg"></p>
+  <a href="login.html">Já tens conta? Entrar</a>
+</div>
+
+<script type="module">
+import { authActions } from './app.js';
+
+const btn = document.getElementById('signupBtn');
+const msg = document.getElementById('msg');
+
+btn.onclick = async ()=>{
+  const name=document.getElementById('regName').value.trim();
+  const email=document.getElementById('regEmail').value.trim();
+  const pass=document.getElementById('regPass').value;
+  const code=document.getElementById('regTeamCode').value.trim();
+  try{
+    await authActions.signup(name,email,pass,code);
+    msg.innerText='Conta criada com sucesso! Redirecionando...';
+    setTimeout(()=>location.href='chat.html',1000);
+  }catch(e){ msg.innerText=e.message; }
+};
+</script>
+</body>
+</html>

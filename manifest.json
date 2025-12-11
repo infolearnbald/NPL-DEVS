@@ -1,0 +1,9 @@
+{
+  "name": "NPL DEVS",
+  "short_name": "NPL",
+  "display": "standalone",
+  "start_url": "index.html",
+  "theme_color": "#00ff00",
+  "background_color": "#000000",
+  "icons": []
+}
