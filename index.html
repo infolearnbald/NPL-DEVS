@@ -1,39 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>NPL DEVS - Login</title>
-<link rel="stylesheet" href="style.css">
+    <title>Login — Ultra</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg">
+<body>
 
-<div class="card">
-    <h1>NPL DEVS</h1>
+<div class="container">
 
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Senha">
-
+    <h2>Entrar</h2>
+    <input id="loginEmail" placeholder="Email">
+    <input id="loginPass" type="password" placeholder="Senha">
     <button id="loginBtn">Entrar</button>
 
-    <p>Não tens conta? <a href="register.html">Criar conta</a></p>
-    <p id="errorMsg" class="error"></p>
+    <hr>
+
+    <h2>Criar Conta</h2>
+    <input id="regUsername" placeholder="Nome de usuário">
+    <input id="regEmail" placeholder="Email">
+    <input id="regPass" type="password" placeholder="Senha">
+    <button id="regBtn">Criar Conta</button>
+
 </div>
 
-<script type="module">
-import { auth } from "./firebase.js";
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
-
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const loginBtn = document.getElementById("loginBtn");
-const errorMsg = document.getElementById("errorMsg");
-
-loginBtn.addEventListener("click", () => {
-    signInWithEmailAndPassword(auth, email.value, password.value)
-    .then(() => window.location.href = "chat.html")
-    .catch(err => errorMsg.innerText = "Erro: " + err.code);
-});
-</script>
+<script type="module" src="auth.js"></script>
 </body>
 </html>
-
