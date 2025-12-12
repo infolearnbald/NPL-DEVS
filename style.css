@@ -1,0 +1,40 @@
+body {
+    background-color: #111;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+.login-container, .register-container, .chat-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #000;
+    border: 1px solid #0f0;
+    border-radius: 10px;
+}
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #111;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #0f0;
+    color: #000;
+    cursor: pointer;
+}
+.messages {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+header a {
+    margin: 0 10px;
+    color: #0f0;
+    text-decoration: none;
+}
+
