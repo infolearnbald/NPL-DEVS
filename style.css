@@ -1,40 +1,75 @@
-body {
-    background-color: #111;
-    color: #0f0;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-}
-.login-container, .register-container, .chat-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #000;
-    border: 1px solid #0f0;
-    border-radius: 10px;
-}
-input, button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #111;
-    color: #0f0;
-    border: 1px solid #0f0;
-    border-radius: 5px;
-}
-button:hover {
-    background-color: #0f0;
-    color: #000;
-    cursor: pointer;
-}
-.messages {
-    max-height: 400px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-}
-header a {
-    margin: 0 10px;
-    color: #0f0;
-    text-decoration: none;
+/* Hacker Background */
+.bg {
+    background: url("img/hacker-bg.gif") no-repeat center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Cartões */
+.card {
+    background: rgba(0,0,0,0.85);
+    padding: 25px;
+    width: 320px;
+    border-radius: 12px;
+    color: #0aff9d;
+    box-shadow: 0 0 20px #00ffcc;
+    backdrop-filter: blur(3px);
+}
+
+input, button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #00ffcc;
+    background: black;
+    color: #0aff9d;
+    border-radius: 8px;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    color:#0aff9d;
+}
+
+.messages {
+    height: 55vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message {
+    background: rgba(0,255,170,0.08);
+    margin: 10px;
+    padding: 10px;
+    border-left: 3px solid #00ffcc;
+    border-radius: 6px;
+    color: #0aff9d;
+}
+
+.reactionBtn {
+    margin-right: 5px;
+    background: transparent;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+}
+
+.reactionBtn.active {
+    background: #00ffcc;
+    color: black;
+}
+
+.notif {
+    background: red;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
