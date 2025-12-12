@@ -1,75 +1,77 @@
-/* Hacker Background */
-.bg {
-    background: url("img/hacker-bg.gif") no-repeat center/cover;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    color: #00ffea;
+    background: url("assets/bg.jpg") center/cover fixed no-repeat;
+    backdrop-filter: blur(1px);
 }
 
-/* Cartões */
-.card {
-    background: rgba(0,0,0,0.85);
+.container {
+    width: 90%;
+    max-width: 420px;
+    margin: 70px auto;
+    background: rgba(0,0,0,0.65);
     padding: 25px;
-    width: 320px;
     border-radius: 12px;
-    color: #0aff9d;
-    box-shadow: 0 0 20px #00ffcc;
-    backdrop-filter: blur(3px);
+    border: 1px solid #00ffee88;
+    box-shadow: 0 0 10px #00ffee44;
 }
 
-input, button {
+input, select {
     width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    border: 1px solid #00ffcc;
-    background: black;
-    color: #0aff9d;
-    border-radius: 8px;
+    padding: 10px;
+    margin: 8px 0;
+    background: #000000bb;
+    border: 1px solid #00ffee66;
+    color: #00ffea;
+    border-radius: 5px;
 }
 
 button {
+    width: 100%;
+    padding: 12px;
+    background: #00ffee;
+    color: #000;
+    border: none;
+    margin-top: 10px;
     cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background: #00d9d9;
 }
 
-header {
-    background: rgba(0,0,0,0.8);
-    padding: 15px;
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    color:#0aff9d;
-}
-
-.messages {
-    height: 55vh;
-    overflow-y: auto;
+.tabBtn {
     padding: 10px;
+    cursor: pointer;
+    background: #003333aa;
+    border: 1px solid #00ffee77;
+}
+.tabBtn.active {
+    background: #00ffee;
+    color: #000;
+}
+
+.tabContent {
+    display: none;
+}
+.tabContent.active {
+    display: block;
 }
 
 .message {
-    background: rgba(0,255,170,0.08);
-    margin: 10px;
-    padding: 10px;
-    border-left: 3px solid #00ffcc;
-    border-radius: 6px;
-    color: #0aff9d;
+    background: rgba(0,0,0,0.5);
+    padding: 8px;
+    margin: 5px 0;
+    border-left: 3px solid #00ffee;
 }
-
 .reactionBtn {
-    margin-right: 5px;
-    background: transparent;
-    border: 1px solid #00ffcc;
-    color: #00ffcc;
+    font-size: 11px;
+    padding: 3px 6px;
+    margin-right: 4px;
 }
-
 .reactionBtn.active {
-    background: #00ffcc;
-    color: black;
-}
-
-.notif {
-    background: red;
-    padding: 4px 8px;
-    border-radius: 6px;
+    background: #00ffee;
+    color: #000;
 }
