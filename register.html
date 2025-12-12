@@ -2,21 +2,48 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NPL-DEVS - Cadastro</title>
+<title>Criar Conta - NPL DEVS</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="register-container">
-    <h1>Cadastro</h1>
-    <input type="email" id="regEmail" placeholder="Email">
-    <input type="password" id="regPassword" placeholder="Senha">
-    <input type="text" id="username" placeholder="Nome de exibição">
-    <input type="url" id="photoUrl" placeholder="Link da foto (opcional)">
-    <button id="registerBtn">Criar Conta</button>
-    <p>Já tens conta? <a href="index.html">Entrar</a></p>
-    <p id="errorMsgReg" class="error"></p>
+<body class="bg">
+
+<div class="card">
+    <h1>Criar Conta</h1>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="email" id="email">
+    <input type="password" id="password">
+
+    <button id="registerBtn">Criar</button>
+
+    <p id="errorMsg" class="error"></p>
 </div>
-<script type="module" src="main.js"></script>
+
+<script type="module">
+import { auth, db } from "./firebase.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+
+const username = document.getElementById("username");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const registerBtn = document.getElementById("registerBtn");
+const errorMsg = document.getElementById("errorMsg");
+
+registerBtn.addEventListener("click", async () => {
+    try {
+        const cred = await createUserWithEmailAndPassword(auth, email.value, password.value);
+        await setDoc(doc(db, "users", cred.user.uid), {
+            username: username.value,
+            email: email.value,
+            createdAt: Date.now()
+        });
+        window.location.href = "chat.html";
+    } catch (err) {
+        errorMsg.innerText = "Erro: " + err.code;
+    }
+});
+</script>
+
 </body>
 </html>
