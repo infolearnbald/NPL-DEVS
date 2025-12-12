@@ -2,48 +2,43 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chat NPL-DEVS</title>
+<title>NPL DEVS Chat</title>
 <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
 </head>
-<body>
-<div class="chat-container">
+<body class="bg">
 
-    <header>
-        <h1>Chat da Equipa</h1>
-        <div class="header-links">
-            <a href="profile.html">Perfil</a>
-            <a href="notifications.html" id="notifLink">Notificações (<span id="notifCount">0</span>)</a>
-            <button id="logoutBtn">Sair</button>
-        </div>
-    </header>
+<header>
+    <h2>NPL DEVS</h2>
+    <span id="notifCount" class="notif">0</span>
+    <button id="logoutBtn">Sair</button>
+</header>
 
-    <div class="tabs">
-        <button class="tabBtn active" data-tab="collective">Coletivo</button>
-        <button class="tabBtn" data-tab="private">Privado</button>
-    </div>
+<div class="tabs">
+    <button class="tabBtn active" data-tab="chatColetivo">Chat Geral</button>
+    <button class="tabBtn" data-tab="chatPrivado">Chat Privado</button>
+    <button class="tabBtn" data-tab="notificacoes">Notificações</button>
+</div>
 
-    <!-- Chat Coletivo -->
-    <div id="collective" class="tabContent active">
-        <div id="messages" class="messages"></div>
-        <input type="text" id="msg" placeholder="Digite uma mensagem">
-        <button id="sendMsgBtn">Enviar</button>
-    </div>
+<!-- CHAT GERAL -->
+<div id="chatColetivo" class="tabContent active">
+    <div id="messages" class="messages"></div>
+    <input id="msg" placeholder="Mensagem...">
+    <button id="sendMsgBtn">Enviar</button>
+</div>
 
-    <!-- Chat Privado -->
-    <div id="private" class="tabContent">
-        <select id="privateSelect">
-            <option value="">Selecione um usuário</option>
-        </select>
-        <div id="privateMessages" class="messages"></div>
-        <input type="text" id="privateMsg" placeholder="Digite uma mensagem privada">
-        <button id="sendPrivateBtn">Enviar</button>
-    </div>
+<!-- CHAT PRIVADO -->
+<div id="chatPrivado" class="tabContent">
+    <select id="privateSelect"></select>
+    <div id="privateMessages" class="messages"></div>
+    <input id="privateMsg" placeholder="Mensagem...">
+    <button id="sendPrivateBtn">Enviar</button>
+</div>
 
+<!-- NOTIFICAÇÕES -->
+<div id="notificacoes" class="tabContent">
+    <div id="notifList"></div>
 </div>
 
 <script type="module" src="main.js"></script>
 </body>
 </html>
-
