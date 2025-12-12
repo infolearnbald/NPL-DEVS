@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ultra Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<button id="logoutBtn" style="float:right;width:auto;padding:8px">Sair</button>
+
+<div class="container">
+
+    <div style="display:flex; gap:5px; margin-bottom:10px;">
+        <button class="tabBtn active" data-tab="tabPublic">Chat Público</button>
+        <button class="tabBtn" data-tab="tabPrivate">Privado</button>
+    </div>
+
+    <!-- CHAT PÚBLICO -->
+    <div id="tabPublic" class="tabContent active">
+        <div id="messages" style="height:300px; overflow-y:auto;"></div>
+        <input id="msg" placeholder="Digite aqui...">
+        <button id="sendMsgBtn">Enviar</button>
+    </div>
+
+    <!-- CHAT PRIVADO -->
+    <div id="tabPrivate" class="tabContent">
+        <select id="privateSelect"></select>
+        <div id="privateMessages" style="height:300px; overflow-y:auto;"></div>
+        <input id="privateMsg" placeholder="Mensagem privada">
+        <button id="sendPrivateBtn">Enviar</button>
+    </div>
+
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
