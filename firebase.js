@@ -4,7 +4,7 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDrziQM8nHq6nHq6h7m5zHnZi3E1w9DwmkeLvI",
+  apiKey: "AIzaSyDrziQM8nHq6h7m5zHnZi3E1w9DwmkeLvI",
   authDomain: "npl-devs.firebaseapp.com",
   projectId: "npl-devs",
   storageBucket: "npl-devs.firebasestorage.app",
