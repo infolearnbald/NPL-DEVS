@@ -1,19 +1,15 @@
-import { protect } from "./session.js";
-import { renderPublicChat } from "./chat-public.js";
-import { renderPrivateChat } from "./chat-private.js";
-import { renderProfile } from "./profile.js";
-import { renderPlayground } from "./playground.js";
+import { auth } from "./firebase.js";
+import { onAuthStateChanged, signOut }
+from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
 
-protect();
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    window.location.href = "index.html";
+  }
+});
 
-const view = document.getElementById("view");
-
-document.querySelectorAll("[data-tab]").forEach(btn => {
-  btn.onclick = () => {
-    const tab = btn.dataset.tab;
-    if (tab === "public") renderPublicChat(view);
-    if (tab === "private") renderPrivateChat(view);
-    if (tab === "profile") renderProfile(view);
-    if (tab === "playground") renderPlayground(view);
-  };
+document.getElementById("logoutBtn")?.addEventListener("click", () => {
+  signOut(auth).then(() => {
+    window.location.href = "index.html";
+  });
 });
