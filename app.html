@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NPL-DEVS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<header>
+  <nav>
+    <button data-tab="public">💬</button>
+    <button data-tab="private">👥</button>
+    <button data-tab="playground">🧪</button>
+    <button data-tab="profile">⚙️</button>
+    <button id="logout">⎋</button>
+  </nav>
+</header>
+
+<main id="view"></main>
+
+<script type="module" src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+</script>
+</body>
+</html>
