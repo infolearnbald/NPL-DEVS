@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    color: #00ffea;
+    background: url("assets/bg.jpg") center/cover fixed no-repeat;
+    backdrop-filter: blur(1px);
+}
+
+.container {
+    width: 90%;
+    max-width: 420px;
+    margin: 70px auto;
+    background: rgba(0,0,0,0.65);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #00ffee88;
+    box-shadow: 0 0 10px #00ffee44;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    background: #000000bb;
+    border: 1px solid #00ffee66;
+    color: #00ffea;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #00ffee;
+    color: #000;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button:hover {
+    background: #00d9d9;
+}
+
+.tabBtn {
+    padding: 10px;
+    cursor: pointer;
+    background: #003333aa;
+    border: 1px solid #00ffee77;
+}
+.tabBtn.active {
+    background: #00ffee;
+    color: #000;
+}
+
+.tabContent {
+    display: none;
+}
+.tabContent.active {
+    display: block;
+}
+
+.message {
+    background: rgba(0,0,0,0.5);
+    padding: 8px;
+    margin: 5px 0;
+    border-left: 3px solid #00ffee;
+}
+.reactionBtn {
+    font-size: 11px;
+    padding: 3px 6px;
+    margin-right: 4px;
+}
+.reactionBtn.active {
+    background: #00ffee;
+    color: #000;
+}

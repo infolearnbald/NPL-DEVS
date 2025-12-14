@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>NPL DEVS Chat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+
+<header>
+    <h2>NPL DEVS</h2>
+    <span id="notifCount" class="notif">0</span>
+    <button id="logoutBtn">Sair</button>
+</header>
+
+<div class="tabs">
+    <button class="tabBtn active" data-tab="chatColetivo">Chat Geral</button>
+    <button class="tabBtn" data-tab="chatPrivado">Chat Privado</button>
+    <button class="tabBtn" data-tab="notificacoes">Notificações</button>
+</div>
+
+<!-- CHAT GERAL -->
+<div id="chatColetivo" class="tabContent active">
+    <div id="messages" class="messages"></div>
+    <input id="msg" placeholder="Mensagem...">
+    <button id="sendMsgBtn">Enviar</button>
+</div>
+
+<!-- CHAT PRIVADO -->
+<div id="chatPrivado" class="tabContent">
+    <select id="privateSelect"></select>
+    <div id="privateMessages" class="messages"></div>
+    <input id="privateMsg" placeholder="Mensagem...">
+    <button id="sendPrivateBtn">Enviar</button>
+</div>
+
+<!-- NOTIFICAÇÕES -->
+<div id="notificacoes" class="tabContent">
+    <div id="notifList"></div>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
